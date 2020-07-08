@@ -4,11 +4,21 @@ date: 2020-05-19T23:15:53+08:00
 weight: 2
 ---
 
+在`Landmarks`应用中，用户可以创建一个简介来描述他们自已的个人情况。为了让用户可以编辑自己的简介，我们需要添加一个编辑模式并设计一个偏好设置界面。
+
+这里使用多种通用控件来展示用户的各种数据，并在用户保存他们所做的数据修改时更新地标数据模型。
+
+按照步骤在下面的项目工程中一步步进行实践。
+
 {{%attachments title="项目文件" style="blue" pattern=".*zip" /%}}
 
 ---
 
-### 第一节 
+### 第一节 展示用户简介
+
+`Landmarks`应用在本地存储了一些配置和用户偏好设置。在用户编辑这些数据前，会被展示在一个没有编辑按钮的概要视图上。
+
+![secion 1](/tutorials/app_design_and_layout/images/working-with-ui-controls-section1.png?width=30pc)
 
 **步骤1** 
 **步骤2** 
