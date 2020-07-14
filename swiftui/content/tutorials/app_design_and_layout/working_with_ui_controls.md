@@ -21,6 +21,9 @@ weight: 2
 ![secion 1](/tutorials/app_design_and_layout/images/working-with-ui-controls-section1.png?width=30pc)
 
 **步骤1** 
+
+在项目文件导航栏的`Landmarks`文件组下面新建一个名为`Profile`的文件组，并在这个新建的文件组下面添加一个新视图`ProfileHost`, 这个新视图包含一个`TextView`，用来展示用户名称。
+
 **步骤2** 
 **步骤3** 
 **步骤4** 
