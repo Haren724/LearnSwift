@@ -4,6 +4,10 @@ date: 2020-07-19T21:44:35+08:00
 weight: 2
 ---
 
+这篇教程让我们可以应用之前所学到的`SwiftUI`知识，把`Landmarks`应用从`iOS`平台迁移到`watchOS`平台上。在拷贝可以共用的数据和视图文件之前，需要先给项目中添加一个对应`watchOS`的`Target`编译目标，`assets`资源保持原状，只需要调整`SwiftUI`视图以适应在`watchOS`平台上展示就可以了。
+
+按照下面的步骤构建工程，或者下载完成后的项目文件学习。
+
 {{%attachments title="项目文件" style="blue" pattern=".*zip" /%}}
 
 ---
