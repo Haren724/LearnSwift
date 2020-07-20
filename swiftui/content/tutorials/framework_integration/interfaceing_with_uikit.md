@@ -78,14 +78,46 @@ weight: 1
 
 ![swipe landmarks](/tutorials/framework_integration/interfaceing_with_uikit.files/swipe-landmarks.mp4?width=20pc)
 
-### 第三节 
+### 第三节 在`SwiftUI`视图的状态下跟踪页面
 
-**步骤1** 
-**步骤2** 
-**步骤3** 
-**步骤4** 
+如果要添加一个自定义的`UIPageControl`控件，就需要一种方式能够在`PageView`中跟踪当前展示的页面。这就需要在`PageView`中声明一个`@State`属性，并传递一个针对该属性的绑定关系给`PageViewController`视图，在`PageViewController`中通过绑定关系更新状态属性，来反映当前展示的页面。
 
-### 第四节 
+![section 3](/tutorials/framework_integration/images/interfacing_with_uikit_section3.png?width=20pc)
+
+**步骤1** 在`PageViewController`中添加一个绑定属性`currentPage`。除了使用关键字`@Binding`声明属性为绑定属性外，还需要更新一下函数`setViewControllers(_:direction:animated:)`，给它传入`currentPage`绑定属性
+
+![section 3 step 1](/tutorials/framework_integration/images/interfacing_with_uikit_section3_step1.png?width=50pc)
+
+做到这一步还不能正常运行，继续进行下一步。
+
+**步骤2** 在`PageView`中声明`@State`变量，并在创建`PageViewController`时把绑定属性传入。注意使用`$`语法创建一个针对状态变量的绑定关系。
+
+![section 3 step 2](/tutorials/framework_integration/images/interfacing_with_uikit_section3_step2.png?width=50pc)
+
+**步骤3** 通过改变`PageView`视图中的`currentPage`初始值来测试绑定关系是否正常生效。也可以做一个测试按钮，点击按钮时让第二个页面展示出来
+
+![section 3 step 3](/tutorials/framework_integration/images/interfacing_with_uikit_section3_step3.png?width=50pc)
+
+**步骤4** 添加一个`TextView`控件来展示状态变量`currentPage`的值，拖动页面切换时观察`TextView`上的值，目前不会发生变化。因为`PageViewController`内部没有在切换页面的过程中更新`currentPage`的值。
+
+![section 3 step 4](/tutorials/framework_integration/images/interfacing_with_uikit_section3_step4.png?width=50pc)
+
+**步骤5** 在`PageViewController.swift`中让`coordinator`作为`UIPageViewController`的代理，并添加`pageViewController(_:didFinishAnimating:previousViewControllers:transitionCompleted completed: Bool)` 方法。因为`SwiftUI`在页面切换动画完成时会调用这个方法，这样就可以这个方法内部获取当前正在展示的页面的下标，并同时更新绑定属性`currentPage`的值。
+
+![section 3 step 5](/tutorials/framework_integration/images/interfacing_with_uikit_section3_step5.png?width=50pc)
+
+**步骤6** `coordinator`除了是`UIPageViewController`数据源外，再把它赋值为`UIPageViewController`的代理。由于绑定关系是双向的，所以当页面切换时，`PageView`视图上的`Text`就会实时展示当前的页码。
+
+![section 3 step 6](/tutorials/framework_integration/images/interfacing_with_uikit_section3_step6.png?width=50pc)
+
+
+![section 3 step 6 mp4](/tutorials/framework_integration/interfaceing_with_uikit.files/swipe-binding-text.mp4?width=20pc)
+
+### 第四节 添加一个自定义`PageControl`
+
+我们已经为包裹在`UIViewRepresentable`视图中的子视图上添加了一个自定义`UIPageControl`
+
+![section 4](/tutorials/framework_integration/images/interfacing_with_uikit_section4.png?width=20pc)
 
 **步骤1** 
 **步骤2** 
