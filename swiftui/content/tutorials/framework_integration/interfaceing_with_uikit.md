@@ -76,7 +76,7 @@ weight: 1
 
 **步骤5** 打开实时预览，并测试一下前后页面切换的功能是否正常
 
-![swipe landmarks](/tutorials/framework_integration/interfaceing_with_uikit.files/swipe-landmarks.mp4?width=50pc)
+![swipe landmarks](/tutorials/framework_integration/interfaceing_with_uikit.files/swipe-landmarks.mp4?width=20pc)
 
 ### 第三节 
 
