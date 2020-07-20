@@ -50,12 +50,33 @@ weight: 1
 
 ![section 1 step 6](/tutorials/framework_integration/images/interfacing_with_uikit_section1_step6.png?width=20pc)
 
-### 第二节 
+### 第二节 创建视图控制器的数据源
 
-**步骤1** 
-**步骤2** 
-**步骤3** 
-**步骤4** 
+短短几个步骤就做了很多事，`PageViewController`使用`UIPageViewController`去展示来自`SwiftUI`内容。现在是时候添加挥动手势进行页面之间的翻动了。
+
+![section 2](/tutorials/framework_integration/images/interfacing_with_uikit_section2.png?width=20pc)
+
+一个展示`UIKit`视图控制器的`SwiftUI`视图可以定义一个`Coordinator`类型，这个`Coordinator`类型由SwitUI管理，用来作为视图展示的环境
+
+**步骤1** 在`PageViewControlelr`中定义一个嵌套类型`Coordiantor`。`SwiftUI`管理`UIViewController Representable`类型的`coordinator`，并在调用方法时把它作为环境的一部分。
+
+![section 2 step 1](/tutorials/framework_integration/images/interfacing_with_uikit_section2_step1.png?width=30pc)
+
+**步骤2** 在`PageView Controller`中添加另一个方法，创建`coordinator`。`SwiftUI`在调用`makeUIViewController(context:)`前会先调用`makeCoordinator()`方法，因此在配置视图控制器时是可以访问到`coordiantor`对象的。可以使用`coordinator`为实现通用的`Cocoa模式`,例如：`代理模式`、`数据源`以及`目标-动作`。
+
+![section 2 step 2](/tutorials/framework_integration/images/interfacing_with_uikit_section2_step2.png?width=50pc)
+
+**步骤3** 让`Coordinator`类型添加`UIPageViewControllerDataSource`协议遵循，并且实现两个必要方法。这两个必要方法会建立起视图控制器之间的联系，因此可以实现页面之前的前后切换。
+
+![section 2 step 3](/tutorials/framework_integration/images/interfacing_with_uikit_section2_step3.png?width=50pc)
+
+**步骤4** 把`coordiantor`作为`UIPageViewController`的数据源
+
+![section 2 step 4](/tutorials/framework_integration/images/interfacing_with_uikit_section2_step4.png?width=50pc)
+
+**步骤5** 打开实时预览，并测试一下前后页面切换的功能是否正常
+
+![swipe landmarks](/tutorials/framework_integration/interfaceing_with_uikit.files/swipe-landmarks.mp4?width=50pc)
 
 ### 第三节 
 
