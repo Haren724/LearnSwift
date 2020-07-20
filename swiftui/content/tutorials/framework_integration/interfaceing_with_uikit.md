@@ -119,14 +119,38 @@ weight: 1
 
 ![section 4](/tutorials/framework_integration/images/interfacing_with_uikit_section4.png?width=20pc)
 
-**步骤1** 
-**步骤2** 
-**步骤3** 
-**步骤4** 
+**步骤1** 创建一个新的`SwiftUI`视图，命名为`PageControl.swift`，并使用`PageControl`类型遵循`UIViewRepresentable`协议。`UIViewRepresentable`和`UIViewControllerRepresentable`类型有相同的生命周期，在UIKit类型中都有对应的生命周期方法。
+
+![section 4 step 1](/tutorials/framework_integration/images/interfacing_with_uikit_section4_step1.png?width=50pc)
+
+**步骤2** 在`PageView`中用`PageControl`替换`Text`,并把`VStack`换成`ZStack`。因为总页数和当前页面都已经传入`PageControl`，所以`PageControl`已经可以正确的显示。
+
+![section 4 step 2](/tutorials/framework_integration/images/interfacing_with_uikit_section4_step2.png?width=50pc)
+
+下一步要处理`PageControl`与用户的交互，让它可以被用户点击任意一边进行页面间的切换。
+
+**步骤3**  在`PageControl`中创建一个嵌套类型`Coordiantor`，添加一个`makeCoordinator()`方法创建并返回一个`coordinator`实例。因为`UIControl`子类(包括`UIPageControl`)使用`Target-Action`模式，`Coordinator`实现一个`@objc`方法来更新`currentPage`绑定属性的值。
+
+![section 4 step 3](/tutorials/framework_integration/images/interfacing_with_uikit_section4_step3.png?width=50pc)
+
+**步骤4** 把`coordinator`作为`PageControl`值改变事件的目标处理器，并指定`updateCurrentPage(sender:)`方法为处理函数
+
+![section 4 step 4](/tutorials/framework_integration/images/interfacing_with_uikit_section4_step4.png?width=50pc)
+
+**步骤5** 现在就可以尝试`PageControl`的各种交互来切换页面，`PageView`展示了`SwiftUI`和`UIKit`视图如何混合使用。
+
+![section 4 step 5 mp4](/tutorials/framework_integration/interfaceing_with_uikit.files/page-control.mp4?width=20pc)
 
 ### 检查是否理解
 
-**问题1** 
-**问题2** 
-**问题3** 
-**问题4** 
+**问题1** 下面哪个协议可以用来把`UIKit`中的视图控件器桥接进`SwiftUI`？
+
+- [ ] UIViewRepresentable
+- [ ] UIHostingController
+- [X] UIViewControllerRepresentable
+
+**问题2** 对于`UIViewControllerRepresentable`类型，下面哪个方法可以为它创建一个代理或数据源？
+
+- [ ] 在`makeUIViewController(context:)`方法中创建`UIViewController`实例的地方
+- [ ] 在`UIViewControllerRepresentable`类型的初始化器中
+- [X] 在`makeCoordinator()`方法中
