@@ -50,7 +50,7 @@ weight: 2
 ![section 2 step 1](/tutorials/framework_integration/images/create_a_watchOS_app_section2_step1.png?width=20pc)
 
 其中`Landmark.swift`、`UserData.swift`、`Data.swift`、`Profile.swift`、`Hike.swift`这几个文件定义了应用的数据模型。我们不会使用这些文件中的所有内容，但为了编译通过需要这些文件。`LandmarkRow.swift`、
-`CircleImage.swift`这两个文件是不需要任何修改就可以在`watchOS`平台上展示的视图。
+`CircleImage.swift`这两个文件是不需要任何修改就可以在`watchOS`平台上展示的视图。要注意`Data.swift`文件中是否导入`ImageIO`模块，如果没有`import ImageIO`这一句，编译时会有报错。
 
 **步骤2** 上一步选中需要文件的情况下，在文件检查器中，勾选`WatchLandmarks Extension`，让之前选中的文件也变成`WatchLandmarks Extension`编译时用到的文件。
 
@@ -64,11 +64,26 @@ weight: 2
 
 ![section 2 step 4](/tutorials/framework_integration/images/create_a_watchOS_app_section2_step4.png?width=50pc)
 
-### 第三节 
+### 第三节 创建详情视图
 
-**步骤1** 
-**步骤2** 
-**步骤3** 
+iOS编译目标下的资源可以在手表应用下使用，但我们需要创建一个专门适配手表尺寸的地标详情页来展示地标的具体信息。为了测试视图是否能适配手表展示，需要分别为最大尺寸和最小尺寸手表创建预览视图，并根据情况适当的调整圆形视图的布局来适应手表的界面大小。
+
+![section 3](/tutorials/framework_integration/images/create_a_watchOS_app_section3.png?width=20pc)
+
+**步骤1** 在项目导航器中，点击`WatchLandmarks Extension`文件夹左边的三角形展开箭头，查看文件夹下的具体内容，并添加一个名为`WatchLandmarkDetail`的`SwiftUI`视图。
+
+![section 3 step 1](/tutorials/framework_integration/images/create_a_watchOS_app_section3_step1.png?width=50pc)
+
+**步骤2** 在结构体`WatchLandmarkDetail`结构体中添加`userData`、`landmark`和`landmarkIndex`属性。这些新增和属性与在处理用户输入时在`LandmarkDetail`中添加的属性是对等的。
+
+![section 3 step 2](/tutorials/framework_integration/images/create_a_watchOS_app_section3_step2.png?width=50pc)
+
+添加完属性后发现，Xcode会报缺少参数的错误。要修复这个错误有两种方式，一种是为属性提供一个默认值，一种是给视图的属性传入对应的值。
+
+**步骤3** 在预览视图中，创建一个用户数据的实例，并给`WatchLandmarkDetail`结构体的初始化器中传入一个地标对象作为参数。这里需要把用户数据设置为视图的环境对象。
+
+![section 3 step 3](/tutorials/framework_integration/images/create_a_watchOS_app_section3_step3.png?width=50pc)
+
 **步骤4** 
 
 ### 第四节 
