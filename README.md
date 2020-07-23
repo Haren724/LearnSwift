@@ -1,6 +1,4 @@
-# SwiftUI_Tutorial_zh
-
-[SwiftUI官方教程中文版](https://swiftui.jokerhub.cn)
+# SwiftUI_Tutorial_zh  👉 [主页](https://swiftui.jokerhub.cn)
 
 ## 拉取仓库并预览
 
