@@ -71,3 +71,21 @@ name = "<i class='fas fa-book-open'></i> Swift 官网"
 identifier = "swift"
 url = "https://swift.org"
 weight = 8
+
+[[Languages.zh.menu.shortcuts]]
+name = "<i class='fas fa-question-circle'></i> Apple 官方论坛"
+identifier = "forums"
+url = "https://developer.apple.com/forums/"
+weight = 9
+
+[[Languages.zh.menu.shortcuts]]
+name = "<i class='fas fa-file-code'></i> Apple 示例代码"
+identifier = "example code"
+url = "https://developer.apple.com/wwdc20/sample-code/"
+weight = 10
+
+[[Languages.zh.menu.shortcuts]]
+name = "<i class='fas fa-folder'></i> Apple 官方文档"
+identifier = "documentation"
+url = "https://developer.apple.com/documentation/"
+weight = 11
