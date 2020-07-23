@@ -181,6 +181,33 @@ iOS编译目标下的资源可以在手表应用下使用，但我们需要创�
 ![section 5 step 6](/tutorials/framework_integration/images/create_a_watchOS_app_section5_step6.png?width=50pc)
 
 ### 第六节 添加地标列表
+
+目前已经将`LandmarkList`视图改造为可以同时兼容`watchOS`和`iOS`两个平台，现在就可以把它应用在`watchOS`平台下的应用中了。
+
+![section 6](/tutorials/framework_integration/images/create_a_watchOS_app_section6.png?width=20pc)
+
+**步骤1** 在文件检查器中，将`LandmarkList.swift`添加为`WatchLandmark Extension`编译目标的成员。现在就可以在`watchOS`的应用中使用`LandmarkList.swift`这份代码文件了。
+
+![section 6 step 1](/tutorials/framework_integration/images/create_a_watchOS_app_section6_step1.png?width=20pc)
+
+这一步其实在**`第五节步骤六`**已经做过了。
+
+**步骤2** 在工具条上，切换编译方案为`Watch Landmarks`
+
+![section 6 step 2](/tutorials/framework_integration/images/create_a_watchOS_app_section6_step2.png?width=30pc)
+
+**步骤3**  打开`LandmarkList.swift`文件，并对该视图进行预览. `Command + Option + Enter`打开预览画布，`Command + Option + P`启动预览。因为现在编译方案已经切换为`watchOS`平台，所以现在预览视图里显示的是手表预览。`watchOS`平台的应用根视图是`ContentView`，目前显示的是`Hello, World`文字。
+
+![section 6 step 3](/tutorials/framework_integration/images/create_a_watchOS_app_section6_step3.png?width=10pc)
+
+**步骤4** 修改`ContentView`让它显示地标列表
+
+![section 6 step 4](/tutorials/framework_integration/images/create_a_watchOS_app_section6_step4.png?width=50pc)
+
+**步骤5** 在模拟器上构建并运行`watchOS`应用。滚动地标列表，点击查看地标详情，标记地标为收藏状态，点击返回按钮从地标详情页返回到地标列表页，打开收藏开关，只查看补收藏的地标。测试一下`watchOS`应用的功能是否正常。
+
+![section 6 step 5](/tutorials/framework_integration/creating_a_watchOS_App.files/watch_landmark_app_test.mp4?width=20pc)
+
 ### 第七节 
 
 ### 检查是否理解
