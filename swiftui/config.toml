@@ -8,7 +8,7 @@ metaDataFormat = "yaml"
 defaultContentLanguageInSubdir= true
 
 [params]
-  editURL = "https://github.com/wangzhizhou/SwiftUI_Tutorial_zh/edit/master/swiftUI/content/"
+  editURL = "https://github.com/wangzhizhou/SwiftUI_Tutorial_zh/edit/master/swiftui/content/"
   description = "SwiftUI官方教程中文版"
   author = "王志舟"
   showVisitedLinks = false
