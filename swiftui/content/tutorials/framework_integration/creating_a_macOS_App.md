@@ -4,6 +4,12 @@ date: 2020-07-19T21:44:35+08:00
 weight: 3
 ---
 
+创建了`watchOS`平台的`Landmarks`应用后，下一步就是把`Landmarks`带到`MacOS`平台上。运用之前学到的所有知识，完成在`iOS`、`watchOS`及`macOS`的全平台应用。
+
+在项目工程中添加`macOS`编译目标，复用在`iOS`应用中的代码和资源，使用`SwiftUI`创建`macOS`平台上的列表和详情视图。
+
+按照步骤来编译工程，或者下载工程查看完成后的代码。
+
 {{%attachments title="项目文件" style="blue" pattern=".*zip" /%}}
 
 ---
