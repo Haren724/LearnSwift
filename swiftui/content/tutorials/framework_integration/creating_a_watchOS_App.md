@@ -208,11 +208,88 @@ iOS编译目标下的资源可以在手表应用下使用，但我们需要创�
 
 ![section 6 step 5](/tutorials/framework_integration/creating_a_watchOS_App.files/watch_landmark_app_test.mp4?width=20pc)
 
-### 第七节 
+### 第七节 创建自定义通知界面
+
+`watchOS`平台的`Landmarks`应用已经接近完成了。在最后一节中，会创建一个通知界面，当用户的地理位置靠近自己收藏过的地标位置时会收到通知提示用户，通知界面展示当前正在接近的地标相关信息。本节只讲当用户收到通知时怎样显示通知界面，不涉及怎样设置和发送通知给用户的内容。
+
+![section 7](/tutorials/framework_integration/images/create_a_watchOS_app_section7.png?width=30pc)
+
+**步骤1** 打开`NotificationView.swift`文件并创建一个显示地标信息、标题及消息的视图。由于任何通知都可能为`nil`，预览视图会展示两种不同的通知视图。第一个展示在没有数据时按默认值显示的视图，第二个展示有标题、消息及位置数据时的视图。
+
+![section 7 step 1](/tutorials/framework_integration/images/create_a_watchOS_app_section7_step1.png?width=50pc)
+
+**步骤2** 打开`NotificationController`添加`landmark`、`title`和`message`属性。这些属性值存储用户收到的通知值。
+
+![section 7 step 2](/tutorials/framework_integration/images/create_a_watchOS_app_section7_step2.png?width=50pc)
+
+**步骤3** 更新`body()`方法，在其内部使用这些属性。在`body`方法内初始化之前创建的`NotificationView`。
+
+![section 7 step 3](/tutorials/framework_integration/images/create_a_watchOS_app_section7_step3.png?width=50pc)
+
+**步骤4** 在`NatificationController`中定义`LandmarkIndex`键，使用这个键从通知中提取地标的下标值。
+
+![section 7 step 4](/tutorials/framework_integration/images/create_a_watchOS_app_section7_step4.png?width=50pc)
+
+**步骤5** 使用`didReceive(_:)`方法从收到的通知中解析相关数据值。这个方法会更新控件器的属性值。调用这个方法后，系统会让控制器的`body`属性失效，引起导航视图更新，之后系统会把通知界面显示在`Apple Watch`上。
+
+![section 7 step 5](/tutorials/framework_integration/images/create_a_watchOS_app_section7_step5.png?width=50pc)
+
+当`Apple Watch`接收到通知时，它会创建`NotificationController`并把它与通知的类型关联起来。为了给`NotificationController`设置类型，必须打开并编辑应用的`storyboard`。
+
+**步骤6** 在项目导航器中，选择`WatchLandmarks`文件夹，并打开`Interface.storyboard`文件，然后选中指向静态通知界面控制器(`static notification interface controller`)的箭头。
+
+![section 7 step 6](/tutorials/framework_integration/images/create_a_watchOS_app_section7_step6.png?width=50pc)
+
+**步骤7** 在属性检查器中，设置通知类别的名称为`LandmarkNear`
+
+![section 7 step 7](/tutorials/framework_integration/images/create_a_watchOS_app_section7_step7.png?width=50pc)
+
+使用`LandmarkNear`类别配置测试数据(`payload`)，并把它传给`NotificationController`
+
+**步骤8** 项目导航器中选中`WatchLandmarks Extensions`文件夹，打开`Push NotificationPayload.apns`文件，更新`title`、`body`、`category`和`landmarkIndex`属性值。确保设置`category`为`LandmarkNear`。除此之外还需要删除所有在本教程中不需要的其它无关字段，例如`subtitle`、`WatchKit Simulator Actions`和`customKey`。Payload文件是用来模拟从服务端发送的远程推送的数据。
+
+![section 7 step 8](/tutorials/framework_integration/images/create_a_watchOS_app_section7_step8.png?width=50pc)
+
+**步骤9** 选择编译方案`WatchLandmarks(Notificaton)`，编译并运行应用。第一次运行通知方案时，系统会请求发送通知的权限，选择允许(`Allow`)获取发送通知的权限。模拟器会展示一个可滚动的通知：一个标识应用身份的横幅、通知视图以及一个点击按钮用来响应通知被点击后的动作。
+
+![section 7 step 9 1](/tutorials/framework_integration/images/create_a_watchOS_app_section7_step9_1.png?width=20pc)
+
+![section 7 step 9 2](/tutorials/framework_integration/images/create_a_watchOS_app_section7_step9_2.png?width=20pc)
 
 ### 检查是否理解
 
-**问题1** 
-**问题2** 
-**问题3** 
-**问题4** 
+**问题1** 当要在`iOS`工程中添加一个`watchOS`编译目标时，应该选用哪个应用模板?
+
+![problem 1](/tutorials/framework_integration/images/create_a_watchOS_app_problem1.png?width=40pc&classes=border)
+
+- [ ] App
+- [X] Watch App for iOS App
+- [ ] Game App
+
+**问题2** 下面哪一个`watchOS`应用元素可以通过使用`SwiftUI`来实现？
+
+- [ ]只用`watchOS`应用的视图可以使用`SwiftUI`实现
+- [X]`watchOS`应用的视图以及自定义通知界面
+- [ ]`watchOS`应用的视图、自定义通知界面以及`complications`
+- [ ]`watchOS`应用的视图、自定义通知界面、`complicatons`以及`Siri卡片`
+
+**问题3** 为什么不能在`watchOS`平台上复用`LandmarkDetail`视图？
+
+- [ ]因为`LandmarkDetail`视图是为大屏设备设计的
+- [ ]因为`watchOS`的用户界面应该只展示最重要的信息，并提供访问额外详情的快速访问方式
+- [ ]`MapView`不能在`watchOS`上使用，因为它遵循`UIViewRepresentable`协议，这个协议在`watchOS`平台上不可用
+- [X]以上所有
+
+**问题4** 为什么需要针对`watchOS`平台来修改`LandmarkList`视图？
+
+- [X]]当用户点击列表中的某一项时，需要改变列表展示的详情视图
+- [ ]`LandmarkList`不包含任何平台相关的代码，所以要针对不同平台进行不同的布局
+- [ ]要支持多平台，必须使用范型
+- [ ]必须为每个平台重新设计视图
+
+**问题5** 哪一个通知界面可以使用`SwiftUI`开发？
+
+![problem 5](/tutorials/framework_integration/images/create_a_watchOS_app_problem5.png?width=40pc&classes=border)
+
+- [X]只有动态交互界面可以
+- [ ]静态和动态交互界面都可以
