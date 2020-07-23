@@ -84,14 +84,104 @@ iOS编译目标下的资源可以在手表应用下使用，但我们需要创�
 
 ![section 3 step 3](/tutorials/framework_integration/images/create_a_watchOS_app_section3_step3.png?width=50pc)
 
-**步骤4** 
+**步骤4** 在`WatchLandmarkDetail.swift`文件中，body()方法中返回一个`CircleImage`视图。这里的`CircleImage`是复用iOS项目中的视图，因为创建的图片是可缩放的，可以调用`.scaleToFill()`属性修改器让圆的大小添满整个手表显示屏。
 
-### 第四节 
+![section 3 step 4](/tutorials/framework_integration/images/create_a_watchOS_app_section3_step4.png?width=50pc)
 
-**步骤1** 
-**步骤2** 
-**步骤3** 
-**步骤4** 
+**步骤5** 创建最大尺寸(44mm)和最小尺寸(38mm)的手表预览视图。通过测试在最大最小尺寸上的展示情况，查看应用UI是否有问题，通常情况下，需要测试所有不同尺寸显示屏上UI展示情况是否符合预期。
+
+![section 3 step 5](/tutorials/framework_integration/images/create_a_watchOS_app_section3_step5.png?width=50pc)
+
+`CircleImage`缩放到高度完全填充显示器高度，但这种情况下适配了高度，宽度却被截断了。为了修复这个截断问题，需要把`CircleImage`视图嵌入到一个`VStack`视图容器中，并作一些调整，让`CircleImage`可以在所有尺寸的手表显示屏上正常展示。
+
+**步骤6** 把`CircleImage`嵌入到`VStack`中，并在图片下方显示地标名称信息。
+
+![section 3 step 6](/tutorials/framework_integration/images/create_a_watchOS_app_section3_step6.png?width=50pc)
+
+很明显，此时的信息一屏展示不下，所以需要把视图内容放入到`ScrollView`中，以获取滚动查看的功能。
+
+**步骤7** 把`VStack`整体嵌入到一个`ScrollView`中，这就让视图获取了滚动查看的能力，但同时也引入了另一个问题：`CircleImage`现在扩展到完全尺寸，把其它元素挤到没有地方显示。所以需要缩放`CircleImage`，让圆形图片和地标名称可以在一屏内同时显示出来。
+
+![section 3 step 7](/tutorials/framework_integration/images/create_a_watchOS_app_section3_step7.png?width=50pc)
+
+**步骤8** 改变`scaleToFill()`为`scaleToFit()`，这就让图片缩放按照显示器的宽度进行适配。
+
+![section 3 step 8](/tutorials/framework_integration/images/create_a_watchOS_app_section3_step8.png?width=40pc)
+
+**步骤9**
+
+为了让地标名称在地标图片的下面展示了来，添加`padding`量来解决。
+
+![section 3 step 9](/tutorials/framework_integration/images/create_a_watchOS_app_section3_step9.png?width=40pc)
+
+**步骤10** 给返回按钮添加一个标题文本。这个返回按钮是看不见的，只有把`LandmarksList`视图加上后，才会出现返回按钮。
+
+![section 3 step 10](/tutorials/framework_integration/images/create_a_watchOS_app_section3_step10.png?width=40pc)
+
+### 第四节 添加一个`watchOS`地图视图
+
+既然已经创建了详情页，现在就可以添加一个地图视图用来显示地标的地理位置了。不像`CircleImage`，这里就不能复用iOS应用的`MapView`了。需要创建一个`WKInterfaceObjectRepresentable`结构体来包装一个`WatchKit`地图。
+
+![section 4](/tutorials/framework_integration/images/create_a_watchOS_app_section4.png?width=20pc)
+
+**步骤1** 在`WatchKit Extension`中添加一个名为`WatchMapView`的视图。
+
+![section 4 step 1](/tutorials/framework_integration/images/create_a_watchOS_app_section4_step1.png?width=50pc)
+
+**步骤2** 让`WatchMapView`遵循`WKInterfaceObjectRepresentable`协议而不是`View`协议。
+
+![section 4 step 2](/tutorials/framework_integration/images/create_a_watchOS_app_section4_step2.png?width=50pc)
+
+目前，因为还没有实现协议`WKInterfaceObjectRepresentable`协议的方法，所以Xcode会报错。
+
+**步骤3** 删除`body()`方法，并用属性`landmark`替换它。当创建一个地图视图时，需要给这个`landmark`属性传入一个值。像在预览视图中传入一个地标实例数据一样。
+
+![section 4 step 3](/tutorials/framework_integration/images/create_a_watchOS_app_section4_step3.png?width=50pc)
+
+**步骤4** 实例协议`WKInterfaceObjectRepresentable`方法`makeWKInterfaceObject(context:)`。这个协议方法创建`WatchKit`地图视图`WatchMapView`。
+
+![section 4 step 4](/tutorials/framework_integration/images/create_a_watchOS_app_section4_step4.png?width=50pc)
+
+**步骤5** 实现协议方法`updateWKInterfaceObject:(_:, context:)`，根据地标的坐标设置地图展示区域，现在项目可以编译通过了。
+
+![section 4 step 5](/tutorials/framework_integration/images/create_a_watchOS_app_section4_step5.png?width=50pc)
+
+**步骤6** 在`WatchLandmarkDetail.swift`文件中把`WatchMapView`添加在`VStack`的底部。在地图上面添加一上分割器。使用`.scaledToFit()`和`.paddding()`来修改地图尺寸，让它更适合屏幕。
+
+![section 4 step 6](/tutorials/framework_integration/images/create_a_watchOS_app_section4_step6.png?width=50pc)
+
+### 第五节 创建跨平台列表视图
+
+对于地标列表，可以复用iOS应用中列表的行元素视图，但不同的平台下需要展示适合平台的详情页。这就需要把`LandmarkList`视图转换成一个通用的列表视图。
+
+![section 5](/tutorials/framework_integration/images/create_a_watchOS_app_section5.png?width=20pc)
+
+**步骤1** 在工具条中，选择`Landmarks`方案，让`Xcode`现在的编译运行方案指向iOS平台。这样做是为了确保对`LandmarkList`视图的重构不会影响原来在`iOS`平台时的表现，这样就可以在不影响`iOS`平台的条件下，把`LandmarkList`重构后应用到`watchOS`应用中。
+
+![section 5 step 1](/tutorials/framework_integration/images/create_a_watchOS_app_section5_step1.png?width=30pc)
+
+**步骤2** 切换到文件`LandmarkList.swift`，把类型声明为范型。改造为范型后，当要创建一个`LandmarkList`结构的实例时，会报范型参数类型无法推断的错误。这将在下面的步骤中解决。
+
+![section 5 step 2](/tutorials/framework_integration/images/create_a_watchOS_app_section5_step2.png?width=50pc)
+
+**步骤3** 添加一个闭包属性，用来创建详情视图。
+
+![section 5 step 3](/tutorials/framework_integration/images/create_a_watchOS_app_section5_step3.png?width=50pc)
+
+**步骤4** 使用`detailViewProducer`属性为地标创建详情视图。当需要创建一个`LandmarkList`时，需要提供一个闭包来创建对应地标的详情视图
+
+![section 5 step 4](/tutorials/framework_integration/images/create_a_watchOS_app_section5_step4.png?width=50pc)
+
+**步骤5** 切换到`Home.swift`文件，在`CategoryHome`结构体的`body`属性中添加一个闭包用来创建详情视图。`Xcode`会根据闭包的返回值类型推断出`LandmarkList`结构体的范型参数类型。
+
+![section 5 step 5](/tutorials/framework_integration/images/create_a_watchOS_app_section5_step5.png?width=50pc)
+
+**步骤6** 在`LandmarkList.swift`文件中，给预览视图添加相似的代码。为了适配不同的设备平台，这里需要使用条件编译，为不同平台编译不同的代码。
+
+![section 5 step 6](/tutorials/framework_integration/images/create_a_watchOS_app_section5_step6.png?width=50pc)
+
+### 第六节 添加地标列表
+### 第七节 
 
 ### 检查是否理解
 
