@@ -50,7 +50,7 @@ weight: 1
 
 `Landmarks`应用对每个类别下的地标采用横向滑动的行进行展示。添加一个新的视图类型用来表示这样一个地标行，然后使用这个新创建的行类型具体展示某一具体类型上的所有地标。
 
-![section 3](/tutorials/app_design_and_layout/composing_complex_interfaces.files/add-rows-landmarks.mp4?width=20pc)
+![section 3](/tutorials/app_design_and_layout/composing_complex_interfaces.files/add-rows-landmarks.gif?width=20pc)
 
 **步骤1** 定义一个新的视图类型，用来展示地标类别行的内容。新建行视图需要存放地标具体类别的展示数据
 
@@ -96,7 +96,7 @@ weight: 1
 
 ![section 5 step 1](/tutorials/app_design_and_layout/images/swiftui-app-design-layout-section5-step1.png?width=50pc)
 
-![section 5 step 1 mp4](/tutorials/app_design_and_layout/composing_complex_interfaces.files/swiftui-app-design-layout-section5-step1.mp4?width=20pc)
+![section 5 step 1 gif](/tutorials/app_design_and_layout/composing_complex_interfaces.files/swiftui-app-design-layout-section5-step1.gif?width=20pc)
 
 **步骤2** 使用`renderingMode(_:)`和`foregroundColor(_:)`这两个属性修改器来改变地标类别项的导航样式。做为`NavigationLink`标签的`CategoryItem`中的文本会使用`Environment`中的强调颜色，图片可能以模板图片的方式渲染，这些都可以使用属性修改器来调整，达到最佳效果。
 
@@ -110,13 +110,13 @@ weight: 1
 
 ![section 5 step 4](/tutorials/app_design_and_layout/images/swiftui-app-design-layout-section5-step4.png?width=50pc)
 
-![section 5 step 4 mp4](/tutorials/app_design_and_layout/composing_complex_interfaces.files/swiftui-app-design-layout-section5-step4.mp4?width=10pc)
+![section 5 step 4 gif](/tutorials/app_design_and_layout/composing_complex_interfaces.files/swiftui-app-design-layout-section5-step4.gif?width=10pc)
 
 **步骤5** 在`CategoryHome.swift`中添加一个跳转链接，点击时跳转到全部地标的筛选页面。
 
 ![section 5 step 5](/tutorials/app_design_and_layout/images/swiftui-app-design-layout-section5-step5.png?width=50pc)
 
-![section 5 step 5 mp4](/tutorials/app_design_and_layout/composing_complex_interfaces.files/swiftui-app-design-layout-section5-step5.mp4?width=20pc)
+![section 5 step 5 gif](/tutorials/app_design_and_layout/composing_complex_interfaces.files/swiftui-app-design-layout-section5-step5.gif?width=20pc)
 
 **步骤6** 把`LandmarkList.swift`中的把包裹地标列表视图的`NavigationView`移动到对应的预览视图中。因为在应用中，`LandmarkList`总是会被展示在`CategoryHome.swift`定义的导航视图中。
 

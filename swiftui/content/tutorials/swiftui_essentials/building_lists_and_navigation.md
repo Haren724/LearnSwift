@@ -142,7 +142,7 @@ Xcode的画布会自动识别当前代码编辑器中遵循`PreviewProvider`协�
 
 **步骤4** 切换到实时预览模式下可以直接点击地标列表的任意一行，现在就可以跳转到地标详情页了。
 
-![list navigation](/tutorials/swiftui_essentials/building_lists_and_navigation.files/swifui-building-list-navigation.mp4?width=50pc)
+![list navigation](/tutorials/swiftui_essentials/building_lists_and_navigation.files/swifui-building-list-navigation.gif?width=50pc)
 
 ### 第七节 子视图传入数据
 
@@ -190,7 +190,7 @@ Xcode的画布会自动识别当前代码编辑器中遵循`PreviewProvider`协�
 
 **步骤11** 切换到实时预览模式下去查看从地标列表页对应的行跳转到对应地标详情页是否正常
 
-![landmark list preview](/tutorials/swiftui_essentials/building_lists_and_navigation.files/swiftui-building-list-landmark-list-preview.mp4?width=25pc)
+![landmark list preview](/tutorials/swiftui_essentials/building_lists_and_navigation.files/swiftui-building-list-landmark-list-preview.gif?width=25pc)
 
 ### 第八节 动态生成预览视图
 

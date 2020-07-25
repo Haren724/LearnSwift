@@ -76,7 +76,7 @@ weight: 1
 
 **步骤5** 打开实时预览，并测试一下前后页面切换的功能是否正常
 
-![swipe landmarks](/tutorials/framework_integration/interfaceing_with_uikit.files/swipe-landmarks.mp4?width=20pc)
+![swipe landmarks](/tutorials/framework_integration/interfaceing_with_uikit.files/swipe-landmarks.gif?width=20pc)
 
 ### 第三节 在`SwiftUI`视图的状态下跟踪页面
 
@@ -111,7 +111,7 @@ weight: 1
 ![section 3 step 6](/tutorials/framework_integration/images/interfacing_with_uikit_section3_step6.png?width=50pc)
 
 
-![section 3 step 6 mp4](/tutorials/framework_integration/interfaceing_with_uikit.files/swipe-binding-text.mp4?width=20pc)
+![section 3 step 6 gif](/tutorials/framework_integration/interfaceing_with_uikit.files/swipe-binding-text.gif?width=20pc)
 
 ### 第四节 添加一个自定义`PageControl`
 
@@ -139,7 +139,7 @@ weight: 1
 
 **步骤5** 现在就可以尝试`PageControl`的各种交互来切换页面，`PageView`展示了`SwiftUI`和`UIKit`视图如何混合使用。
 
-![section 4 step 5 mp4](/tutorials/framework_integration/interfaceing_with_uikit.files/page-control.mp4?width=20pc)
+![section 4 step 5 gif](/tutorials/framework_integration/interfaceing_with_uikit.files/page-control.gif?width=20pc)
 
 ### 检查是否理解
 

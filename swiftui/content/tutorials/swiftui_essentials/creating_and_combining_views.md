@@ -19,7 +19,7 @@ Xcode可以提供实时的反馈，让你所做的改动立即转化成对应的
 
 要想在Xcode中预览画布中的视图或者与画布中的视图进行交互，要求你的Mac系统版本号不低于`macOS Catalina 10.15`
 
-![create new project](/tutorials/swiftui_essentials/creating_and_combining_views.files/create-new-project.mp4?width=30pc)
+![create new project](/tutorials/swiftui_essentials/creating_and_combining_views.files/create-new-project.gif?height=30pc)
 
 **步骤1** 打开Xcode，在启动页面点击**创建新工程**或者在菜单中选择**文件->新建->项目**
 
@@ -48,13 +48,13 @@ Xcode可以提供实时的反馈，让你所做的改动立即转化成对应的
 
 **步骤6** 在**body**属性内部，修改文字`Hello World`为其它的不同的文字，当你在改变代码的同时，预览视图也会实时的更新对应的内容变化
 
-![creating and combining views](/tutorials/swiftui_essentials/creating_and_combining_views.files/xcode-live-preview.mp4?width=40pc)
+![creating and combining views](/tutorials/swiftui_essentials/creating_and_combining_views.files/xcode-live-preview.gif?width=40pc)
 
 ### 第二节 定制文本视图(Text View)
 
 可能通过修改代码来改变一个视图的显示样式，也可以通过检查器获取视图可修改属性，然后再写对应的代码改变样式。在创建应用的过程中，可以同时使用**源码编辑器、画布或者检查器**，无论当前使用的是哪一个工具编辑视图，代码会保持和这些编辑器展示的样式一致
 
-![customize text view](/tutorials/swiftui_essentials/creating_and_combining_views.files/customize-text-view.mp4?width=30pc)
+![customize text view](/tutorials/swiftui_essentials/creating_and_combining_views.files/customize-text-view.gif?width=30pc)
 
 下面我们使用**检查器**来定制视图的显示样式
 
@@ -104,7 +104,7 @@ Xcode可以提供实时的反馈，让你所做的改动立即转化成对应的
 
 **步骤4** 设置位置控件的字体为子标题样式
 
-![swiftui inspector add text view](/tutorials/swiftui_essentials/creating_and_combining_views.files/swiftui-inspector-add-text-view.mp4?width=50pc)
+![swiftui inspector add text view](/tutorials/swiftui_essentials/creating_and_combining_views.files/swiftui-inspector-add-text-view.gif?width=50pc)
 
 **步骤5** 设置`VStack`初始化参数为左对齐内部的子视图。默认情况下，栈会把内部视图在自己的主轴上居中对齐，并自动计算各子视图的间距。下一步要添加一个`Text`控制用来描述公园的状态，它水平排列在位置信息的右边。
 
@@ -118,7 +118,7 @@ Xcode可以提供实时的反馈，让你所做的改动立即转化成对应的
 
 **步骤9** 使用`padding()`修改器给地标信息内容视图整体加内边距
 
-![swiftui embed in hstack](/tutorials/swiftui_essentials/creating_and_combining_views.files/swiftui-embed-in-hstack.mp4?width=50pc)
+![swiftui embed in hstack](/tutorials/swiftui_essentials/creating_and_combining_views.files/swiftui-embed-in-hstack.gif?width=50pc)
 
 ### 第四节 创建自定义图像视图(Image)
 

@@ -314,7 +314,7 @@ weight: 3
 
 **步骤8** 构建并运行应用。尝试改变过滤器的设置，或者点击详情页中的收藏按钮，观察视图内容的变化。
 
-![section 10 step8](/tutorials/framework_integration/creating_a_macOS_App.files/macos-landmark.mp4?width=50pc)
+![section 10 step8](/tutorials/framework_integration/creating_a_macOS_App.files/macos-landmark.gif?width=50pc)
 
 ### 检查是否理解
 

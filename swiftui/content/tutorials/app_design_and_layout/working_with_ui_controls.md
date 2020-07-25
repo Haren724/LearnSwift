@@ -119,9 +119,7 @@ weight: 2
 **问题1** 编辑状态改变时，怎样更新一个视图，例如，当用户编辑了用户简介信息后点击完成按钮的情况下，是怎么更新一个视图的
 
 - [ ] ![problem 1 answer 1](/tutorials/app_design_and_layout/images/working-with-ui-controls-problem1-answer1.png?width=30pc&classes=border)
-
 - [X] ![problem 1 answer 2](/tutorials/app_design_and_layout/images/working-with-ui-controls-problem1-answer2.png?width=30pc&classes=border)
-
 - [ ] ![problem 1 answer 3](/tutorials/app_design_and_layout/images/working-with-ui-controls-problem1-answer3.png?width=30pc&classes=border)
 
 **问题2** 什么情况下需要添加一个`accessiblity`标签，使用`accessibility(label:)`修改器?

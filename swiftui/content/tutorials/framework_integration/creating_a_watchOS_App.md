@@ -206,7 +206,7 @@ iOS编译目标下的资源可以在手表应用下使用，但我们需要创�
 
 **步骤5** 在模拟器上构建并运行`watchOS`应用。滚动地标列表，点击查看地标详情，标记地标为收藏状态，点击返回按钮从地标详情页返回到地标列表页，打开收藏开关，只查看补收藏的地标。测试一下`watchOS`应用的功能是否正常。
 
-![section 6 step 5](/tutorials/framework_integration/creating_a_watchOS_App.files/watch_landmark_app_test.mp4?width=20pc)
+![section 6 step 5](/tutorials/framework_integration/creating_a_watchOS_App.files/watch_landmark_app_test.gif?width=20pc)
 
 ### 第七节 创建自定义通知界面
 
@@ -268,28 +268,28 @@ iOS编译目标下的资源可以在手表应用下使用，但我们需要创�
 
 **问题2** 下面哪一个`watchOS`应用元素可以通过使用`SwiftUI`来实现？
 
-- [ ]只用`watchOS`应用的视图可以使用`SwiftUI`实现
-- [X]`watchOS`应用的视图以及自定义通知界面
-- [ ]`watchOS`应用的视图、自定义通知界面以及`complications`
-- [ ]`watchOS`应用的视图、自定义通知界面、`complicatons`以及`Siri卡片`
+- [ ] 只用`watchOS`应用的视图可以使用`SwiftUI`实现
+- [X] `watchOS`应用的视图以及自定义通知界面
+- [ ] `watchOS`应用的视图、自定义通知界面以及`complications`
+- [ ] `watchOS`应用的视图、自定义通知界面、`complicatons`以及`Siri卡片`
 
 **问题3** 为什么不能在`watchOS`平台上复用`LandmarkDetail`视图？
 
-- [ ]因为`LandmarkDetail`视图是为大屏设备设计的
-- [ ]因为`watchOS`的用户界面应该只展示最重要的信息，并提供访问额外详情的快速访问方式
-- [ ]`MapView`不能在`watchOS`上使用，因为它遵循`UIViewRepresentable`协议，这个协议在`watchOS`平台上不可用
-- [X]以上所有
+- [ ] 因为`LandmarkDetail`视图是为大屏设备设计的
+- [ ] 因为`watchOS`的用户界面应该只展示最重要的信息，并提供访问额外详情的快速访问方式
+- [ ] `MapView`不能在`watchOS`上使用，因为它遵循`UIViewRepresentable`协议，这个协议在`watchOS`平台上不可用
+- [X] 以上所有
 
 **问题4** 为什么需要针对`watchOS`平台来修改`LandmarkList`视图？
 
-- [X]]当用户点击列表中的某一项时，需要改变列表展示的详情视图
-- [ ]`LandmarkList`不包含任何平台相关的代码，所以要针对不同平台进行不同的布局
-- [ ]要支持多平台，必须使用范型
-- [ ]必须为每个平台重新设计视图
+- [X] 当用户点击列表中的某一项时，需要改变列表展示的详情视图
+- [ ] `LandmarkList`不包含任何平台相关的代码，所以要针对不同平台进行不同的布局
+- [ ] 要支持多平台，必须使用范型
+- [ ] 必须为每个平台重新设计视图
 
 **问题5** 哪一个通知界面可以使用`SwiftUI`开发？
 
 ![problem 5](/tutorials/framework_integration/images/create_a_watchOS_app_problem5.png?width=40pc&classes=border)
 
-- [X]只有动态交互界面可以
-- [ ]静态和动态交互界面都可以
+- [X] 只有动态交互界面可以
+- [ ] 静态和动态交互界面都可以

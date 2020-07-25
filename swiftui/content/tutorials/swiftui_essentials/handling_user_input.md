@@ -58,7 +58,7 @@ weight: 3
 
 ![toggle binding](/tutorials/swiftui_essentials/images/swiftui-handle-user-input-toggle-binding.png?width=50pc)
 
-![live preview](/tutorials/swiftui_essentials/handling_user_input.files/toggle-state-live-preview.mp4?width=20pc)
+![live preview](/tutorials/swiftui_essentials/handling_user_input.files/toggle-state-live-preview.gif?width=20pc)
 
 ### 第四节 使用可观察对象来存储数据
 
@@ -102,7 +102,7 @@ weight: 3
 
 **步骤6** 切换到`LandmarkList.swift`文件，并打开实时预览视图去验证所添加的功能是否正常工作
 
-![landmark list environment](/tutorials/swiftui_essentials/handling_user_input.files/landmarklist-environment.mp4?width=20pc)
+![landmark list environment](/tutorials/swiftui_essentials/handling_user_input.files/landmarklist-environment.gif?width=20pc)
 
 ### 第六节 为每一个地标创建一个喜爱按钮
 
@@ -118,7 +118,7 @@ weight: 3
 
 **步骤3** 切换到`landmarkList.swift`，并开启实时预览模式。当从列表页导航进入详情页后，点击喜欢按钮，喜欢的状态会在返回列表页后与列表中对应的地标喜欢状态保持一致，因为列表页和详情页的地标数据使用的是同一份，所以可以在不同页面间保持状态同步。
 
-![star button completed](/tutorials/swiftui_essentials/handling_user_input.files/swiftui-handle-user-input-start-completed.mp4?width=20pc)
+![star button completed](/tutorials/swiftui_essentials/handling_user_input.files/swiftui-handle-user-input-start-completed.gif?width=20pc)
 
 ### 检查是否理解
 

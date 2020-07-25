@@ -22,19 +22,19 @@ weight: 2
 
 **步骤1** 在`HikeView.swift`中，打开实时预览，体验一下图表的打开和隐藏，此时的状态改变时是没有添加动画效果的。在本篇的实践中，保持实时预览一直打开，每一步修改的效果就可以实时的看到
 
-![live preview animation](/tutorials/drawing_and_animation/animating_views_and_transitions.files/live-preview-animations.mp4?width=20pc)
+![live preview animation](/tutorials/drawing_and_animation/animating_views_and_transitions.files/live-preview-animations.gif?width=20pc)
 
 **步骤2** 给显示/隐藏切换的箭头按钮添加旋转动画，会发现现在按钮点击时的旋转有一个动画过渡的效果了
 
 ![rotate button animation](/tutorials/drawing_and_animation/images/swiftui-animation-transition-rotate-button-animation.png?width=30pc)
 
-![rotate button animation video](/tutorials/drawing_and_animation/animating_views_and_transitions.files/rotate-button-aniamtion.mp4?width=20pc)
+![rotate button animation video](/tutorials/drawing_and_animation/animating_views_and_transitions.files/rotate-button-aniamtion.gif?width=20pc)
 
 **步骤3** 当视图从隐藏到展示时，让切换按钮变大1.5倍
 
 ![rotate button scale](/tutorials/drawing_and_animation/images/swiftui-animation-transition-rotate-button-scale.png?width=30pc)
 
-![rotate button scale video](/tutorials/drawing_and_animation/animating_views_and_transitions.files/rotate-button-animation-scale.mp4?width=20pc)
+![rotate button scale video](/tutorials/drawing_and_animation/animating_views_and_transitions.files/rotate-button-animation-scale.gif?width=20pc)
 
 **步骤4** 把动画的类型从`easeInOut`改为`spring()`。SwiftUI包含一些预设或可自定义的动画类型，像`弹簧(spring)`动画和类型`液体(fluid)`动画类型。可以调整动画开始前的等待时长、动画的速度也可以指定让动画循环重复的进行
 
@@ -56,17 +56,17 @@ weight: 2
 
 **步骤1** 把`showDetail.toggle()`包裹在`withAnimation`函数调用块中。`showDetail`的改变影响了视图`HikeDetail`和详情切换按钮，在显示/隐藏详情的过程中都有了过滤动画效果。
 
-![with_animation block](/tutorials/drawing_and_animation/animating_views_and_transitions.files/with-animation-block.mp4?width=50pc)
+![with_animation block](/tutorials/drawing_and_animation/animating_views_and_transitions.files/with-animation-block.gif?width=50pc)
 
 放慢动画速度，可以观察`SwiftUI`动画在被中断下是怎么运作的
 
 **步骤2** 给`withAnimation`传入一个`时长4秒`的基本动画参数`.easeInOut(duration:4)`，可以指定动画过程时长，给`withAnimation`传入的动画参数与`.animation(_:)`修改器可用参数一致。
 
-![with animation duration block](/tutorials/drawing_and_animation/animating_views_and_transitions.files/with-animation-duration.mp4?width=50pc)
+![with animation duration block](/tutorials/drawing_and_animation/animating_views_and_transitions.files/with-animation-duration.gif?width=50pc)
 
 **步骤3** 在动画过程进行中点击按钮切换视图状态，查看对应的动画被中断时的效果
 
-![with animation interrupt](/tutorials/drawing_and_animation/animating_views_and_transitions.files/with-animation-interrupt.mp4?width=20pc)
+![with animation interrupt](/tutorials/drawing_and_animation/animating_views_and_transitions.files/with-animation-interrupt.gif?width=20pc)
 
 **步骤4** 读下一节之前，把动画时长参数(`.easeInOut(duration: 4)`)去掉，让动画不再缓慢进行。
 
@@ -74,11 +74,11 @@ weight: 2
 
 默值情况下，视图离屏和入屏时的动画效果是`渐隐/渐现`， 这个默认的转场效果可以使用`transition(_:)`修改器进行定制。
 
-![transitions](/tutorials/drawing_and_animation/animating_views_and_transitions.files/customize-view-transitions.mp4?width=20pc)
+![transitions](/tutorials/drawing_and_animation/animating_views_and_transitions.files/customize-view-transitions.gif?width=20pc)
 
 **步骤1** 给`HikeView`视图添加`transition(_:)`修改器，并定制转场参数为`.slide`，转场动画为`滑入/滑出`
 
-![transition slide](/tutorials/drawing_and_animation/animating_views_and_transitions.files/transition-slide.mp4?width=40pc)
+![transition slide](/tutorials/drawing_and_animation/animating_views_and_transitions.files/transition-slide.gif?width=40pc)
 
 **步骤2** 可以把`滑入/滑出`这种转场动画封装起来，方便其它视图复用同样的转场效果
 
@@ -86,11 +86,11 @@ weight: 2
 
 **步骤3** 在`moveAndFade`转场效果的定义中使用`move(edge:)`，让滑入/滑出从屏幕的同一边进行
 
-![move and fade custom](/tutorials/drawing_and_animation/animating_views_and_transitions.files/custom-move-and-fade.mp4?width=50pc)
+![move and fade custom](/tutorials/drawing_and_animation/animating_views_and_transitions.files/custom-move-and-fade.gif?width=50pc)
 
 **步骤4** 使用`asymmetric(insertion:removal:)`修改器来定制视图显示/消失时的转场动画效果
 
-![custom move and fade slide scale](/tutorials/drawing_and_animation/animating_views_and_transitions.files/custom-move-and-fade-slide-scale.mp4?width=50pc)
+![custom move and fade slide scale](/tutorials/drawing_and_animation/animating_views_and_transitions.files/custom-move-and-fade-slide-scale.gif?width=50pc)
 
 ### 第四节 组合复杂的动画效果
 
@@ -108,15 +108,15 @@ weight: 2
 
 **步骤3** 把动画切换为弹簧动画(`spring`)，并设置弹簧阻尼系数为`0.5`，动画过程中产生了逐渐回弹效果
 
-![spring animation](/tutorials/drawing_and_animation/animating_views_and_transitions.files/hike-graph-transition-spring-animation.mp4?width=50pc)
+![spring animation](/tutorials/drawing_and_animation/animating_views_and_transitions.files/hike-graph-transition-spring-animation.gif?width=50pc)
 
 **步骤4** 加速弹簧动画的执行速度，缩短切换图表的时间
 
-![spring animation speed](/tutorials/drawing_and_animation/animating_views_and_transitions.files/spring-animation-speed.mp4?width=50pc)
+![spring animation speed](/tutorials/drawing_and_animation/animating_views_and_transitions.files/spring-animation-speed.gif?width=50pc)
 
 **步骤5** 以当条形在图表中的位置为参数，添加延迟效果，图表中的每个条形会顺序动起来
 
-![spring animation index based delay](/tutorials/drawing_and_animation/animating_views_and_transitions.files/spring-animation-delay-index-based.mp4?width=50pc)
+![spring animation index based delay](/tutorials/drawing_and_animation/animating_views_and_transitions.files/spring-animation-delay-index-based.gif?width=50pc)
 
 **步骤6** 观察一下自定义`波动(rippling)`效果是怎么作用在视图转场中的
 
