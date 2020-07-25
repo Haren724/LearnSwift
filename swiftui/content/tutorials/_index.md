@@ -1,7 +1,7 @@
 ---
 title: "SwiftUI教程"
 date: 2020-04-29T01:41:31+08:00
-weight: 10
+weight: 1
 chapter: true
 pre: "<b>1. </b>"
 ---

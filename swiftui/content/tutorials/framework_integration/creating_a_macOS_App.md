@@ -314,16 +314,14 @@ weight: 3
 
 **步骤8** 构建并运行应用。尝试改变过滤器的设置，或者点击详情页中的收藏按钮，观察视图内容的变化。
 
-![section 10 step8](/tutorials/framework_integration/interfaceing_with_uikit.files/macos-landmark.mp4?width=50pc)
+![section 10 step8](/tutorials/framework_integration/creating_a_macOS_App.files/macos-landmark.mp4?width=50pc)
 
 ### 检查是否理解
 
 **问题1** 在`macOS`平台上，怎么构建一个由可移动分割条分割的主副视图界面？
 
 - [ ] ![problem 1 answer 1](/tutorials/framework_integration/images/creating_a_macOS_App_problem1_answer1.png?width=40pc&classes=border)
-
 - [ ] ![problem 1 answer 2](/tutorials/framework_integration/images/creating_a_macOS_App_problem1_answer2.png?width=40pc&classes=border)
-
 - [X] ![problem 1 answer 3](/tutorials/framework_integration/images/creating_a_macOS_App_problem1_answer3.png?width=40pc&classes=border)
 
 **问题2** 下面哪一个协议是`Picker`控件所使用数据类型必须遵循的？
@@ -335,9 +333,7 @@ weight: 3
 **问题3** 下面哪一个示例正确的展示了将`selectedLandmark`属性绑定到列表中被选中的地标数据？
 
 - [X] ![problem 3 answer 1](/tutorials/framework_integration/images/creating_a_macOS_App_problem3_answer1.png?width=40pc&classes=border)
-
 - [ ] ![problem 3 answer 2](/tutorials/framework_integration/images/creating_a_macOS_App_problem3_answer2.png?width=40pc&classes=border)
-
 - [ ] ![problem 3 answer 3](/tutorials/framework_integration/images/creating_a_macOS_App_problem3_answer3.png?width=40pc&classes=border)
 
 **问题4** 在`MacLandmarks`应用的完成版中，为什么主视图要维持一个对`selectedLandmark`的绑定关系，但详情视图只是取`selectedLandmark`属性的值？

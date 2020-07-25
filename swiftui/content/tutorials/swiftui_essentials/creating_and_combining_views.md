@@ -19,7 +19,7 @@ Xcode可以提供实时的反馈，让你所做的改动立即转化成对应的
 
 要想在Xcode中预览画布中的视图或者与画布中的视图进行交互，要求你的Mac系统版本号不低于`macOS Catalina 10.15`
 
-![create new project](/tutorials/swiftui_essentials/creating_and_combining_views.files/create-new-project.mp4?height=30pc)
+![create new project](/tutorials/swiftui_essentials/creating_and_combining_views.files/create-new-project.mp4?width=30pc)
 
 **步骤1** 打开Xcode，在启动页面点击**创建新工程**或者在菜单中选择**文件->新建->项目**
 
